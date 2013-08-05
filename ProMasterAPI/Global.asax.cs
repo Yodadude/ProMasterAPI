@@ -12,7 +12,7 @@ namespace ProMasterAPI
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            new AppHost().Init();
         }
 
         protected void Session_Start(object sender, EventArgs e)

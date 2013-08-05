@@ -13,7 +13,7 @@ namespace ProMasterAPI.Contracts
 
         public StatusCount Result { get; set; }
 
-        public TransactionCountResponse(string id = "LBAILLUE")
+        public TransactionCountResponse(string id = "LBAILLIEU")
         {
             _db = new NPoco.Database("ProMasterConnection");
 
@@ -27,8 +27,7 @@ namespace ProMasterAPI.Contracts
 
             var list = _db.Fetch<StatusCount>(sql, id).SingleOrDefault();
 
-            Result.Status = list.Status;
-            Result.Count = list.Count;
+            Result = new StatusCount { Status = list.Status, Count = list.Count };
 
         }
 

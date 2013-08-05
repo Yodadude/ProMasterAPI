@@ -11,12 +11,15 @@ namespace ProMasterAPI
 {
     public class ProMasterAPIService : Service
     {
-
+        public object Any(TransactionCount request)
+        {
+            return new TransactionCountResponse();
+        }
     }
 
     public class AppHost : AppHostBase
     {
-        public AppHost() : base("Hello Web Services", typeof(ProMasterAPIService).Assembly) { }
+        public AppHost() : base("ProMaster Web API Services", typeof(ProMasterAPIService).Assembly) { }
 
         public override void Configure(Container container)
         {
