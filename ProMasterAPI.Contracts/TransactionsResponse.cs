@@ -7,9 +7,8 @@ using NPoco;
 
 namespace ProMasterAPI.Contracts
 {
-    public class TransactionCountResponse
+    public class TransactionsResponse
     {
-        public string Status { get; set; }
-        public int Count { get; set; }
+        public List<TransactionDetails> Result { get; set; }
     }
 }

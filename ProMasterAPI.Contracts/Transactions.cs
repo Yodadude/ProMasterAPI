@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NPoco;
+using ServiceStack.ServiceHost;
+
 
 namespace ProMasterAPI.Contracts
 {
-    public class TransactionCountResponse
+    public class Transactions : IReturn<TransactionsResponse>
     {
-        public string Status { get; set; }
-        public int Count { get; set; }
+        public string Name { get; set; }
     }
 }

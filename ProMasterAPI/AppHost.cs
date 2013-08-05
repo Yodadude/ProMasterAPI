@@ -6,14 +6,21 @@ using System.Linq;
 using System.Web;
 using Funq;
 using ProMasterAPI.Contracts;
+using NPoco;
 
 namespace ProMasterAPI
 {
     public class ProMasterAPIService : Service
     {
-        public object Any(TransactionCount request)
+        
+        public object Get(TransactionCount request)
         {
-            return new TransactionCountResponse();
+            return TransactionCountHandler.Handle(request.Name);
+        }
+
+        public object Get(Transactions request)
+        {
+            return TransactionsHandler.Handle(request.Name);
         }
     }
 
@@ -24,6 +31,11 @@ namespace ProMasterAPI
         public override void Configure(Container container)
         {
             Routes.Add<TransactionCount>("/badges");
+            Routes.Add<TransactionCount>("/badges/{Name}");
+            Routes.Add<Transactions>("/transactions");
+            Routes.Add<Transactions>("/transactions/{Name}");
         }
     }
+
+
 }

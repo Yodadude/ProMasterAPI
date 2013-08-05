@@ -8,9 +8,8 @@ using ServiceStack.ServiceHost;
 
 namespace ProMasterAPI.Contracts
 {
-    [Route("/badges")]
     public class TransactionCount : IReturn<TransactionCountResponse>
     {
-        
+        public string Name { get; set; }
     }
 }

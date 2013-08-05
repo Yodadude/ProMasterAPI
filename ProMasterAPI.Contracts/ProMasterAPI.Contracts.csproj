@@ -47,7 +47,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionCount.cs" />
+    <Compile Include="TransactionCountHandler.cs" />
     <Compile Include="TransactionCountResponse.cs" />
+    <Compile Include="Transactions.cs" />
+    <Compile Include="TransactionsHandler.cs" />
+    <Compile Include="TransactionsResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
